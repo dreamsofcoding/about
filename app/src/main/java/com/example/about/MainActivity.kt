@@ -223,8 +223,68 @@ fun generateQrCode(data: String): Bitmap {
 }
 
 
-
 fun User.toJson(): String {
     return Json.encodeToString(this)
+}
+
+
+@Composable
+fun PreviewContainer(content: @Composable () -> Unit) {
+    AboutTheme {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(32.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            content()
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewSingleLineField() {
+    PreviewContainer {
+        InlineEditableField(
+            label = "Name",
+            value = "John Smith",
+            onValueChange = {},
+            singleLine = true
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewMultiLineField() {
+    PreviewContainer {
+        InlineEditableField(
+            label = "Bio",
+            value = "I build things with Compose. I drink way too much coffee.",
+            onValueChange = {},
+            singleLine = false
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewQrDialogContent() {
+    val sampleUser = User(
+        name = "John Smith",
+        bio = "Android dev & Compose fan",
+        website = "https://example.com"
+    )
+    val qrBitmap = generateQrCode(sampleUser.toJson())
+
+    PreviewContainer {
+        Image(
+            bitmap = qrBitmap.asImageBitmap(),
+            contentDescription = "QR Code",
+            modifier = Modifier.fillMaxWidth()
+        )
+
+    }
 }
 
