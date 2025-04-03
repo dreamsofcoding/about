@@ -17,3 +17,68 @@ local.properties
 *.idea
 
 
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Android Studio
+.idea/
+
+# Gradle
+.gradle/
+build/
+!gradle-wrapper.jar
+!**/src/**/build.gradle
+!**/src/**/build.gradle.kts
+
+
+# Kotlin/Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Log & crash files
+*.log
+crashlytics-build.properties
+
+# Generated files
+/captures/
+/output/
+
+# IntelliJ
+*.iws
+*.ipr
+
+# Mac/Linux/Windows system files
+Thumbs.db
+
+# Android specific build artifacts
+**/build/
+**/captures/
+*.apk
+*.ap_
+*.dex
+*.so
+*.aar
+
+# Jetpack Compose preview cache
+.idea/composePreview/
+
+# Signing keys or credentials (customize this if needed)
+*.keystore
+*.jks
+
+
